@@ -18,3 +18,7 @@ tmp
 .vs
 package-info.json
 
+# c++20--xtal
+target
+CMakeUserPresets.json
+Makefile
