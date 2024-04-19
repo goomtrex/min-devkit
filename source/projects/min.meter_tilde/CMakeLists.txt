@@ -16,7 +16,7 @@ if (${CMAKE_CXX_COMPILER_ID} STREQUAL ${MSVC_COMPILER_NAME})
 endif ()
 
 
-set(C74_MIN_API_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../../min-api)
+# set(C74_MIN_API_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../../min-api)
 include(${C74_MIN_API_DIR}/script/min-pretarget.cmake)
 
 
