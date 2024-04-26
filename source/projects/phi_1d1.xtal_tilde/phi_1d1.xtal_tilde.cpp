@@ -3,16 +3,20 @@
 /// @copyright	Copyright 2024 @goomtrex. All rights reserved.
 /// @license    Use of this code is governed by the MIT License found in the `License.md` file.
 
-
 //////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
-
-#include <xtal/all.hh>
 
 #include "c74_min.h"
 using namespace c74::min;
 
+#include <xtal/all.hh>
+namespace x_a = xtal::algebra;
+namespace x_o = xtal::occur;
+namespace x_y = xtal::process;
+namespace x_z = xtal::processor;
 
+
+XTAL_ENV_(push)
 ////////////////////////////////////////////////////////////////////////////////
 
 class phi_1d1 : public object<phi_1d1>, public sample_operator<0, 1>
@@ -32,8 +36,8 @@ public:// PHASE
 	State must be defined without explicit initialization, \
 	and before any associated `attribute`s. \
 	
-	using Y_phi = xtal::process::differential::phasor_t<sample[2]>;
-	using X_phi = xtal::algebra::differential::phase_t <sample[2]>;
+	using Y_phi = xtal::process::differential:: phasor_t<sample[2]>;
+	using X_phi = xtal::algebra::differential::modular_t<sample[2]>;
 	//\
 	Y_phi m_phi;
 	X_phi m_phi;
@@ -77,6 +81,7 @@ public:// FREQUENCY
 	
 };
 ////////////////////////////////////////////////////////////////////////////////
+XTAL_ENV_(pop)
 
 
 MIN_EXTERNAL(phi_1d1);
